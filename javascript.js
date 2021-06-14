@@ -61,3 +61,30 @@ function rgbColor() {
 }
 
 rgbColor()
+
+function reSet() {
+    const boxs = container.querySelectorAll('.box')
+    boxs.forEach(box => box.remove())
+}
+
+function reSize(){
+    btnSize.textContent = 'GRID SIZE'
+    btnSize.addEventListener('click', () => {
+        let user = prompt('What size do you want your grid to be?')
+        if (user === null || user < 1) {
+            reSet()
+            createDivs(16,16)
+            blackColor()
+            grayColor()
+            rgbColor()
+        } else {
+            reSet()
+            createDivs(user,user)
+            blackColor()
+            grayColor()
+            rgbColor()
+        }
+    })
+    buttonsContainer.appendChild(btnSize).classList.add('btn')
+}
+reSize()
