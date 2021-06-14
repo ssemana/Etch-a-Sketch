@@ -5,6 +5,13 @@ const btnRGB = document.createElement('button')
 const btnSize = document.createElement('button')
 const buttonsContainer = document.querySelector('.buttons')
 
+window.onload = () => {
+    const boxs = container.querySelectorAll('.box')
+    boxs.forEach(box => box.addEventListener('mouseover', () => {
+        box.style.background = 'black'
+    }))
+}
+
 function createDivs(col, rows){
     for (let i = 0; i < (col * rows); i++){
         const div = document.createElement('div')
@@ -88,3 +95,4 @@ function reSize(){
     buttonsContainer.appendChild(btnSize).classList.add('btn')
 }
 reSize()
+
